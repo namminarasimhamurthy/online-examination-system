@@ -12,6 +12,21 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #0d6efd;
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .back-btn:hover {
+      background-color: #0b5ed7;
+    }
+
     .certificate {
       width: 59%;
       margin: 50px auto;
@@ -24,7 +39,7 @@
 
     .certificate h1 {
       font-size: 2.5rem;
-      color: #198754; /* ✅ Green color for the title */
+      color: #198754;
     }
 
     .certificate p {
@@ -51,6 +66,7 @@
     .btn-download:hover {
       background-color: #157347;
     }
+
     @media (max-width: 576px) {
       .certificate {
         padding: 20px;
@@ -68,10 +84,17 @@
         padding: 8px 20px;
         font-size: 0.9rem;
       }
+      .back-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
     }
   </style>
 </head>
 <body>
+
+<!-- Back Button -->
+<a href="{% url 'dashboard' %}" class="back-btn">⬅ Back</a>
 
 <div class="certificate" id="certificate-card">
   <h1>Certificate of Completion</h1>
@@ -81,9 +104,9 @@
   <h3><strong>{{ course_name }} Test</strong></h3>
   <p>with a score of <strong>{{ score }}/{{ total }}</strong></p>
 
-
-<div class="btn-group-container">
-  <button class="btn btn-download" onclick="downloadCard()">Download Certificate</button>
+  <div class="btn-group-container">
+    <button class="btn btn-download" onclick="downloadCard()">Download Certificate</button>
+  </div>
 </div>
 
 <!-- html2canvas CDN -->
